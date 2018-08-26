@@ -28,6 +28,7 @@
     "ngx-toastr": "^9.0.2",
     "promise-polyfill": "8.1.0",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.2.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
