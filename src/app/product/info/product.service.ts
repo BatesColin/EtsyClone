@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import 'rxjs/add/observable/of';
 import { Product } from './product.model';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  product: AngularFireList<any>;
+  productList: AngularFireList<any>;
   selectedProduct: Product = new Product ();
   constructor(private firebase: AngularFireDatabase) { }
-}
 
-  getData(){
+
+  getData()
+  {
     this.productList = this.firebase.list('products');
     return this.productList;
   }
 
-  insertProduct(product : Product)
+  insert(product : Product);
   {
     this.productList.push({
 
@@ -24,7 +27,7 @@ export class ProductService {
       seller : product.seller,
       availible : product.availible
     });
-
+  }
     updateProduct(product : Product){
       this.productList.update(product.$key
       {
