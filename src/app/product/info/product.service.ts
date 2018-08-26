@@ -7,11 +7,11 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 export class ProductService {
   product: AngularFireList<any>;
   selectedProduct: Product = new Product ();
-  constructor(private firebase :AngularFireDatabase) { }
+  constructor(private firebase: AngularFireDatabase) { }
 }
 
   getData(){
-    this.productList = this.firebase.list('products')
+    this.productList = this.firebase.list('products');
     return this.productList;
   }
 
